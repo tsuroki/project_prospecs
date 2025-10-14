@@ -1,0 +1,59 @@
+@use './common.scss' as *;
+
+#wrap {
+    header {
+        .notice_line {
+            font-size:$fontsize-14px;
+            color:$color-white;
+            background-color: $color-Red;
+            padding : 10px 80px;
+            text-align: center;
+        }
+        .top {
+            height: 80px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            padding : 0 80px;
+            #logo {
+                width: 90px; height: 50px;
+                a {
+                    img {width: 100%; height: 100%;}
+                }
+            }
+            #gnb {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+                gap: 60px;
+                li {
+                    line-height: 80px;
+                    a{ font-weight: $weight-medium;}
+                }
+            }
+            #right_icons {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+                gap: 30px;
+                .search_bar {
+                    width: 250px;
+                    border-bottom: 1px solid $--color-black;
+                    display: flex;
+                    #search {
+                        width: 100%;
+                        font-size: $fontsize-14px;
+                    }
+                }
+                a {
+                    img {
+                        width: 24px; height: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
