@@ -1,1 +1,26 @@
 @use './common.scss' as *;
+
+#wrap{
+    #main_wrap {
+        .swiper{
+            width: 100%;
+            height: 680px;
+            overflow: hidden;
+            .swiper_wrapper{
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items:center;
+                .swiper-slide{
+                    width: 100%; height: 680px;
+                }
+                .slide1{}
+                .slide2{}
+                .slide3{}
+                .slide4{}
+                .slide5{}
+                .slide6{}
+            }
+        }
+    }
+}

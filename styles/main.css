@@ -1,0 +1,78 @@
+/* color */
+/* line height */
+/* font size */
+/* font weight */
+#wrap header .notice_line {
+  font-size: 0.875rem;
+  color: #ffffff;
+  background-color: #E50021;
+  padding: 10px 80px;
+  text-align: center;
+}
+#wrap header .top {
+  height: 80px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+}
+#wrap header .top #logo {
+  width: 90px;
+  height: 50px;
+}
+#wrap header .top #logo a img {
+  width: 100%;
+  height: 100%;
+}
+#wrap header .top #gnb {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+#wrap header .top #gnb li {
+  line-height: 80px;
+}
+#wrap header .top #gnb li a {
+  font-weight: 500;
+}
+#wrap header .top #right_icons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+#wrap header .top #right_icons .search_bar {
+  width: 250px;
+  border-bottom: 1px solid #1C1B1F;
+  display: flex;
+}
+#wrap header .top #right_icons .search_bar #search {
+  width: 100%;
+  font-size: 0.875rem;
+}
+#wrap header .top #right_icons a img {
+  width: 24px;
+  height: 24px;
+}
+
+#wrap #main_wrap .swiper {
+  width: 100%;
+  height: 680px;
+  overflow: hidden;
+}
+#wrap #main_wrap .swiper .swiper_wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+#wrap #main_wrap .swiper .swiper_wrapper .swiper-slide {
+  width: 100%;
+  height: 680px;
+}
+
+/*# sourceMappingURL=main.css.map */
