@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +7,20 @@
     <meta name="keywords" content="">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
+    <!-- webfont -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <!-- swiper cdn -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <title>Document</title>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./scripts/index.js" defer></script>
 </head>
 <body>
     <div id="wrap">
         <header>
-            <p class="notice_line">[공지] 추석 연휴로 인한 배송 지연 안내</p>
+            <p class="notice_line">카카오톡 친구 추가 시 2,000원 할인쿠폰 증정!</p>
             <div class="top">
                 <h1 id="logo"><a href="#"><img src="./images/prospecs_logo.png" alt="#"></a></h1>
                 <ul id="gnb">
@@ -35,43 +41,118 @@
             </div>
         </header>
         <main id="main_wrap">
-            <div class="swiper">
+            <div class="swiper" id="topbnr">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide slide1">
-                        <iframe width="1497" height="842" src="https://www.youtube.com/embed/43IdcxaaH14?autoplay=1&controls=0&mute=1&loop=1&playlist=43IdcxaaH14" title="[PRO-SPECS] UNSHAKEN RED (60s Ver.)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <div bnr_text>
+                        <video autoplay="autoplay" muted="muted" loop="loop" preload="auto" style="width: 100%; max-width: none; height: 100%; object-fit: cover; pointer-events: none;" class="">
+                            <source type="video/mp4" src="//image.prospecs.com/files/upload/display/202509/202509301043520.mp4/dims/optimize" onerror="this.src='https://img.prospecs.com/prod/error/noimg.jpg/dims/resizef/90x90/optimize'">
+                        </video>
+                        <div class="bnr_text">
                             <h1>듀플렉스 GF 런칭 기념 이벤트</h1>
                             <p>캠페인 영상 시청하고 퀴즈풀면, 듀플렉스 GF 증정</p>
                         </div>
                     </div>
                     <div class="swiper-slide slide2">
-                        <iframe width="1497" height="842" src="https://www.youtube.com/embed/I7B5TC477p8?autoplay=1&controls=0&mute=1&loop=1&playlist=I7B5TC477p8" title="[PRO-SPECS] ALWAYS RED" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <div bnr_text>
+                        <img src="./images/bnr_img/infinite.jpg" alt="Infinite rush 제품">
+                        <div class="bnr_text">
+                            <h1>INFINITE RUSH</h1>
+                            <p>에너지 손실을 최소화하는 PEBA 미드솔 + 카본플레이트</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide3">
+                        <video autoplay="autoplay" muted="muted" loop="loop" preload="auto" style="width: 100%;max-width: none;height: 100%;object-fit: cover;" class="">
+                            <source type="video/mp4" src="//image.prospecs.com/files/upload/display/202509/202509231209041.mp4/dims/optimize" onerror="this.src='https://img.prospecs.com/prod/error/noimg.jpg/dims/resizef/90x90/optimize'">
+                        </video>
+                        <div class="bnr_text">
                             <h1>변함없이, ALWAYS RED</h1>
                             <p>2025 FALL SEASON RELEASE</p>
                         </div>
                     </div>
-                    <div class="swiper-slide slide3">
-                        <img src="" alt="">
-                        <h1></h1>
-                        <p></p>
-                    </div>
                     <div class="swiper-slide slide4">
-                        <img src="" alt="">
-                        <h1></h1>
-                        <p></p>
+                        <a href="#"><img src="./images/bnr_img/padding.jpg" alt="FW시즌 패딩"></a>
+                        <div class="bnr_text">
+                            <h1>Fall & Winter Apparel</h1>
+                            <p>오리지널스포츠 Up to 50% OFF</p>
+                        </div>
                     </div>
                     <div class="swiper-slide slide5">
-                        <img src="" alt="">
-                        <h1></h1>
-                        <p></p>
+                        <a href="#"><img src="./images/bnr_img/jumper.jpg" alt=""></a>
+                        <div class="bnr_text">
+                            <h1>OUTER EARLY-BIRD</h1>
+                            <p>헤비다운/다운 아우터 얼리버드 특가</p>
+                        </div>
                     </div>
                     <div class="swiper-slide slide6">
-                        <img src="" alt="">
-                        <h1></h1>
-                        <p></p>
+                        <a href="#"><img src="./images/bnr_img/marathon.jpg" alt=""></a>
+                        <div class="bnr_text">
+                            <h1>MARATHON 220</h1>
+                            <p>2025 FW NEW COLLECTION 발매</p>
+                        </div>
                     </div>
                 </div> 
+            </div>
+            <div class="best_product">
+                <h2>best</h2>
+                <div class="category">
+                    <a href="#"><span class="cate_name active">running</span></a>
+                    <a href="#"><span class="cate_name">walking</span></a>
+                    <a href="#"><span class="cate_name">teritage</span></a>
+                    <a href="#"><span class="cate_name">tracking</span></a>
+                    <a href="#"><span class="cate_name">clothes</span></a>
+                </div>
+                <div class="swiper" id="product-list">
+                    <div class="swiper-wrapper">
+                        <!-- 듀플렉스 -->
+                        <div class="swiper-slide slide1">
+                            <a href="#">
+                                <img src="./images/Running shoe/duflexGF/duflexGF1.jpg" alt="#">
+                                <p class="product_name">듀플렉스 GF</p>
+                                <div class="colorset">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <p class="price">159,000원</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide slide2">
+                            <a href="#">
+                                <img src="./images/Running shoe/duflexGF/duflexGF1.jpg" alt="#">
+                                <p class="product_name">듀플렉스 GF</p>
+                                <div class="colorset">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <p class="price">159,000원</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide slide3">
+                            <a href="#">
+                                <img src="./images/Running shoe/duflexGF/duflexGF1.jpg" alt="#">
+                                <p class="product_name">듀플렉스 GF</p>
+                                <div class="colorset">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <p class="price">159,000원</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide slide4">
+                            <a href="#">
+                                <img src="./images/Running shoe/duflexGF/duflexGF1.jpg" alt="#">
+                                <p class="product_name">듀플렉스 GF</p>
+                                <div class="colorset">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <p class="price">159,000원</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         <footer>
@@ -91,35 +172,33 @@
                 </div>
                 <div class="insurance">
                     <em>SGI 서울보증안내</em>
-                    <p>
                     현금 등으로 결제하신 경우, 안전 거래를 위해 프로스펙스닷컴 쇼핑몰에서 가입한
                     소비자피해보상보험 서비스를 이용하실 수 있습니다.
-                    </p>
                 </div>
                 <p class="copyright">프로스펙스닷컴 | COPYRIGHT© LS NETWORKS CO. ALL RIGHTS RESERVED</p>
             </div>
             <div class="right">
-                <dl>
+                <dl class="col_support">
                     <dt>SUPPORT</dt>
                     <dd>매장안내</dd>
                     <dd>A/S안내</dd>
                     <dd>고객센터 안내</dd>
                     <dd>APP 다운로드</dd>
                 </dl>
-                <dl>
+                <dl class="col_info">
                     <dt>INFO</dt>
                     <dd>개인정보처리방침</dd>
                     <dd>이용약관</dd>
                     <dd>공지사항</dd>
                     <dd>뉴스</dd>
                 </dl>
-                <dl>
+                <dl class="col_social">
                     <dt>SOCIAL</dt>
                     <dd>FACEBOOK</dd>
                     <dd>YOUTUBE</dd>
                     <dd>INSTAGRAM</dd>
                 </dl>
-                <dl>
+                <dl class="col_familySite">
                     <dt>FAMILY SITE</dt>
                     <dd>MONT-BELL</dd>
                 </dl>
