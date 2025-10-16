@@ -1,1 +1,76 @@
 @use './common.scss' as *;
+
+#wrap {
+    footer{
+        padding: 80px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+        .left {
+            .inquiry {
+                margin-bottom: 14px;
+                p {
+                    font-size: $fontsize-18px;
+                    font-weight: $weight-medium;
+                }
+                em {
+                    font-weight: $weight-bold;
+                    color: $color-red;
+                    margin-left: 5px;
+                }
+            }
+            .time {
+                margin-bottom: 40px;
+                p {
+                    color: $color-8egray;
+                    font-weight: $weight-medium;
+                    font-size: $fontsize-14px;
+                }
+            }
+            .company_info {
+                margin-bottom: 40px;
+                p {
+                    font-size: $fontsize-12px;
+                    font-weight: $weight-medium;
+                }
+            }
+            .insurance {
+                margin-bottom: 18px;
+                em {
+                    font-size: $fontsize-12px;
+                    font-weight: $weight-semibold;
+                }
+                font-weight: $weight-medium;
+                font-size: $fontsize-12px;
+            }
+            .copyright {
+                font-size: $fontsize-12px;
+                font-weight: $weight-semibold;
+            }
+        }
+        .right {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 100px;
+            dt {
+                font-size: $fontsize-14px;
+                font-weight: $weight-semibold;
+                margin-bottom: 20px;
+            }
+            dd {
+                font-size: $fontsize-14px;
+                margin-bottom: 20px;}
+            dd:last-child  {
+                margin-bottom: 0px;
+            }
+            .col_support {}
+            .col_info {}
+            .col_social {}
+            .col_familySite {}
+        }
+    }
+}

@@ -2,24 +2,185 @@
 
 #wrap{
     #main_wrap {
-        .swiper{
-            width: 100%;
-            height: 680px;
+        /* ===배너=== */
+        >.swiper{
             overflow: hidden;
-            .swiper_wrapper{
+            .swiper-wrapper{
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: flex-start;
+                align-items:center;
+                .swiper-slide{
+                    width: 100vw; height: 680px;
+                    position: relative;
+                    z-index: 1;
+                    display: flex;
+                    align-items: center;
+                    iframe{
+                        width: 100vw;
+                        height: 100%;
+                    }
+                    img {}
+                    .bnr_text{
+                        display: flex;
+                        flex-flow: column nowrap;
+                        justify-content: center;
+                        align-items: flex-start;
+                        position: absolute;
+                        gap: 10px;
+                        left: 80px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        z-index: 999;
+                        h1 {
+                            color : $color-white;
+                            font-size: $fontsize-40px;
+                            font-weight: $weight-bold;
+                        }
+                        p {
+                            color : $color-white;
+                            font-size: $fontsize-20px;
+                            font-weight: $weight-medium; 
+                        }
+                    }
+                }
+                .slide1{
+                    .bnr_text{
+                        h1 {
+                        color : $color-white;
+                        font-size: $fontsize-40px;
+                        font-weight: $weight-bold;
+                    }
+                        p {
+                            color : $color-white;
+                            font-size: $fontsize-20px;
+                            font-weight: $weight-medium; 
+                        }
+                    }
+                }
+                .slide2{
+                    .bnr_text{
+                        h1 {
+                        color : $color-white;
+                        font-size: $fontsize-40px;
+                        font-weight: $weight-bold;
+                    }
+                        p {
+                            color : $color-white;
+                            font-size: $fontsize-20px;
+                            font-weight: $weight-medium; 
+                        }
+                    }
+                }
+                .slide3{
+                    .bnr_text{
+                        h1 {
+                        color : $color-white;
+                        font-size: $fontsize-40px;
+                        font-weight: $weight-bold;
+                    }
+                        p {
+                            color : $color-white;
+                            font-size: $fontsize-20px;
+                            font-weight: $weight-medium; 
+                        }
+                    }
+                }
+                .slide4{
+                    .bnr_text{
+                        h1 {
+                        color : $color-black;
+                        font-size: $fontsize-40px;
+                        font-weight: $weight-bold;
+                    }
+                        p {
+                            color : $color-black;
+                            font-size: $fontsize-20px;
+                            font-weight: $weight-medium; 
+                        }
+                    }
+                }
+                .slide5{
+                    .bnr_text{
+                        h1 {
+                        color : $color-white;
+                        font-size: $fontsize-40px;
+                        font-weight: $weight-bold;
+                    }
+                        p {
+                            color : $color-white;
+                            font-size: $fontsize-20px;
+                            font-weight: $weight-medium; 
+                        }
+                    }
+                }
+                .slide6{
+                    .bnr_text{
+                        h1 {
+                        color : $color-white;
+                        font-size: $fontsize-40px;
+                        font-weight: $weight-bold;
+                    }
+                        p {
+                            color : $color-white;
+                            font-size: $fontsize-20px;
+                            font-weight: $weight-medium; 
+                        }
+                    }
+                }
+            }
+        }
+        /* ===BEST=== */
+        .best_product {
+            padding: 80px 0;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            gap : 30px;
+            h2 {
+                text-transform: uppercase;
+                font-size: $fontsize-36px;
+                font-weight: $weight-bold;
+            }
+            .category {
                 display: flex;
                 flex-flow: row nowrap;
                 justify-content: center;
-                align-items:center;
-                .swiper-slide{
-                    width: 100%; height: 680px;
+                align-items: center;
+                gap: 30px;
+                a {
+                    .cate_name {
+                        text-transform: uppercase;
+                        color: $color-8egray; 
+                        font-size: $fontsize-20px;
+                        font-weight: $weight-medium;
+                    }
+                    .active {
+                        color: $color-red;
+                    }
                 }
-                .slide1{}
-                .slide2{}
-                .slide3{}
-                .slide4{}
-                .slide5{}
-                .slide6{}
+            }
+            #product-list {
+                .swiper-wrapper {
+                    .swiper-slide{
+                        width: max-content;
+                        a {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        justify-content: center;
+                        align-items: flex-start;
+                        gap: 20px;
+                            img {width: 380px; height: 380px;}
+                            .product_name {}
+                            .colorset {
+                                span {width: 18px; height: 18px;
+                                border: 1px solid $color-black;
+                                border-radius: 9px; display: inline-block;}
+                                }
+                        }
+                    }
+                }
             }
         }
     }
