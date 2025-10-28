@@ -1,18 +1,33 @@
+@font-face {
+    font-family: 'Moderniz';
+    src:url('../font/Moderniz.otf') format('opentype');
+    font-style:normal;
+}
+
 /* color */
 $color-black : #1C1B1F;
 $color-graychip1 : #5b6073;
 $color-graychip1 : #c2c4bb;
-$color-cobaltchip : #283f9a;
+$color-navy : #283f9a;
 $color-8egray: #8e8e8e;
 $color-BEgray:#bebebe;
-$color-red:#E50021;
+$color-red:#FA0A00;
 $color-white:#ffffff;
+$color-orange:#ff750f;
+$color-beige:#f4f6db;
+$color-brown:#a62a2a;
+$color-gray:#91949b;
+$color-purple:#81007f;
+$color-green:#008100;
+$color-blue:#0200fb;
+
 
 /* line height */
 $lineHeight-150:1.5; 
 $lineHeight-100:1;
 
 /* font size */
+$fontsize-72px : 4.5rem;
 $fontsize-40px : 2.5rem;
 $fontsize-36px : 2.25rem;
 $fontsize-32px : 2rem;
