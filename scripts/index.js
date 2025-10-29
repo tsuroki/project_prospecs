@@ -2,7 +2,7 @@ const bnrSlide = new Swiper ('#main_wrap #topbnr', {
     loop : true,
     autoplay :  {delay : 6000}
     })
-const bestLineSlide = new Swiper ('#best-list', {
+const bestLineSlide = new Swiper('.best-list', {
     loop : true,
-    slidesPerView : 1,
+    slidesPerView : 4,
     })

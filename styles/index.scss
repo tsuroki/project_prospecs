@@ -167,14 +167,279 @@
                         }
                     }
                 }
-                .best_products_line{
-                    #best_list{
+                
+                    .best_list{
                         display: flex;
                         flex-flow: column nowrap;
                         justify-content: center;
                         align-items: flex-start;
+                        overflow:hidden;
+                        width:calc((100vw) - 304px);
+                        transform-origin: left ;
                         .swiper-wrapper{
                             gap:50px;
+                            width: max-content;
+                            .swiper-slide{
+                                width:380px;
+                                a{
+                                    display: flex;
+                                    flex-flow: column nowrap;
+                                    justify-content: center;
+                                    align-items: flex-start;
+                                    gap: 20px;
+                                    img{
+                                        width:100%;
+                                    }
+                                    .product_name{
+                                        font-size: $fontsize-18px;
+                                        font-weight:$weight-medium;
+                                    }
+                                    .colorchip_set{
+                                        display: flex;
+                                        flex-flow: row nowrap;
+                                        gap: 10px;
+                                        .colorchip{
+                                            width:18px; height: 18px;
+                                            border-radius: 9px;
+                                            display:inline-block;
+                                        }
+                                    }
+                                    .product_price{
+                                        font-weight:$weight-medium;
+                                    }
+                                }
+                            }
+                            >.slide1{
+                                >a{
+                                    >.colorchip_set{
+                                        >.colorchip.color1{
+                                            background-color: $color-black;
+                                        }
+                                        >.colorchip.color2{
+                                            background-color: $color-white;
+                                            border: 1px solid $color-black;
+                                        }
+                                        >.colorchip.color3{
+                                            background-color: $color-graychip1;
+                                        }
+                                    }
+                                }
+                            }
+                            >.slide2{
+                                >a{
+                                    >.colorchip_set{
+                                        >.colorchip.color1{
+                                            background-color: $color-black;
+                                        }
+                                        >.colorchip.color2{
+                                            background-color: $color-navy;
+                                        }
+                                        >.colorchip.color3{
+                                            background-color: $color-red;
+                                        }
+                                    }
+                                }
+                            }
+                            >.slide3{
+                                >a{
+                                    >.colorchip_set{
+                                        >.colorchip.color1{
+                                            background-color: $color-black;
+                                        }
+                                        >.colorchip.color2{
+                                            background-color: $color-white;
+                                            border: 1px solid $color-black;
+                                        }
+                                        >.colorchip.color3{
+                                            background-color: $color-beige;
+                                        }
+                                    }
+                                }
+                            }
+                            >.slide4{
+                                >a{
+                                    >.colorchip_set{
+                                        >.colorchip.color1{
+                                            background-color: $color-black;
+                                        }
+                                        >.colorchip.color2{
+                                            background-color: $color-beige;
+                                        }
+                                        >.colorchip.color3{
+                                            background-color: $color-red;
+                                        }
+                                        >.colorchip.color4{
+                                            background-color: $color-blue;
+                                        }
+                                    }
+                                }
+                            }
+                            >.slide5{
+                                >a{
+                                    >.colorchip_set{
+                                        >.colorchip.color1{
+                                            background-color: $color-black;
+                                        }
+                                        >.colorchip.color2{
+                                            background-color: $color-brown;
+                                        }
+                                    }
+                                }
+                            }
+                            >.slide6{
+                                >a{
+                                    >.colorchip_set{
+                                        >.colorchip.color1{
+                                            background-color: $color-black;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+            }
+        }
+        /* best line 끝 */
+        /* always_red */
+        .clothes{
+            background : #010101;
+            width: 100%;
+            height: 800px;
+            position: relative;
+            .clothes_title{
+                position: absolute;
+                left: 80px;
+                top: 50%;
+                transform: translateY(-50%);
+                .alwaysRed{
+                    font-family: 'Moderniz';
+                    color: $color-white;
+                    font-size: $fontsize-72px;
+                    em{
+                        font-family: 'Moderniz';
+                        color: $color-red;
+                    }
+                    margin-bottom: 20px;
+                }
+                .clothes_h3{
+                font-size: $fontsize-32px;
+                font-weight: $weight-semibold;
+                color: $color-white;
+                margin-bottom: 20px;
+                }
+                .clothes_p{
+                font-size: $fontsize-18px;
+                font-weight: $weight-medium;
+                color: $color-white;
+                }
+            }
+            .always_red_image{
+                display: flex;
+                flex-flow: row nowrap;
+                position: absolute;
+                right:80px;
+                bottom: 0;
+                a:nth-child(1){
+                    >.always_red_man{
+                    background: url(../images/AlwaysRed/man.jpeg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    width: 600px;
+                    height: 646px;
+                    color: $color-white;
+                    position: relative;
+                    transform-origin: bottom center;
+                    transition: scale 0.15s;
+                    &:hover{
+                            scale: 1.15;
+                        }
+                        >p{
+                            position: absolute;
+                            left: 50%;
+                            bottom: 100px;
+                            transform: translateX(-50%);
+                            font-size: $fontsize-22px;
+                            font-weight: $weight-semibold;
+                        }
+                    }
+                }
+                a:nth-child(2){
+                    >.always_red_woman{
+                    background: url(../images/AlwaysRed/woman.jpeg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    width: 600px;
+                    height: 646px;
+                    color: $color-white;
+                    position: relative;
+                    transform-origin: bottom center;
+                    transition: scale 0.15s;
+                        &:hover{
+                            scale: 1.15;
+                        }
+                        >p{
+                            position: absolute;
+                            left: 50%;
+                            bottom: 100px;
+                            transform: translateX(-50%);
+                            font-size: $fontsize-22px;
+                            font-weight: $weight-semibold;
+                        }
+                    }
+                }
+            }
+        }
+        /* alwaysred 끝 */
+        /* new product */
+        .new_product {
+            margin : 80px 80px;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap : 50px;
+            >h2 {
+                text-transform: uppercase;
+                font-size: $fontsize-36px;
+                font-weight: $weight-bold;
+            }
+            .new_contents{
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 120px;
+                .category{
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: center;
+                    align-items: flex-end;
+                    gap:30px;
+                    a{
+                        .cate_name{
+                            font-size:$fontsize-18px;
+                            text-transform: uppercase;
+                            font-weight: $weight-medium;
+                            color: $color-8egray
+                        }
+                        .active{
+                            color:$color-red;
+                        }
+                    }
+                }
+                .new_products_line{
+                    .new_list{
+                        display: flex;
+                        flex-flow: column nowrap;
+                        justify-content: center;
+                        align-items: flex-start;
+                        overflow:hidden;
+                        width:1619px;
+                        .swiper-wrapper{
+                            gap:50px;
+                            width: max-content;
                             .swiper-slide{
                                 width:380px;
                                 a{
@@ -296,94 +561,21 @@
                 }
             }
         }
-        /* always_red */
-        .clothes{
-            background : #010101;
-            width: 100%;
-            height: 800px;
-            position: relative;
-            .clothes_title{
-                position: absolute;
-                left: 80px;
-                top: 50%;
-                transform: translateY(-50%);
-                .alwaysRed{
-                    font-family: 'Moderniz';
-                    color: $color-white;
-                    font-size: $fontsize-72px;
-                    em{
-                        font-family: 'Moderniz';
-                        color: $color-red;
-                    }
-                    margin-bottom: 20px;
-                }
-                .clothes_h3{
-                font-size: $fontsize-32px;
-                font-weight: $weight-semibold;
-                color: $color-white;
-                margin-bottom: 20px;
-                }
-                .clothes_p{
-                font-size: $fontsize-18px;
-                font-weight: $weight-medium;
-                color: $color-white;
-                }
-            }
-            .always_red_image{
-                display: flex;
-                flex-flow: row nowrap;
-                position: absolute;
-                right:80px;
-                bottom: 0;
-                a:nth-child(1){
-                    >.alwayes_red_man{
-                    background: url(../images/AlwaysRed/man.jpeg);
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                    width: 600px;
-                    height: 646px;
-                    color: $color-white;
-                    position: relative;
-                    transform-origin: bottom center;
-                    transition: scale 0.15s;
-                    &:hover{
-                            scale: 1.15;
-                        }
-                        >p{
-                            position: absolute;
-                            left: 50%;
-                            bottom: 100px;
-                            transform: translateX(-50%);
-                            font-size: $fontsize-22px;
-                            font-weight: $weight-semibold;
+        /* newproduct끝 */
+        /* FW SEASON LOOK */
+        #fw_season{
+            .fw_season_title{}
+            .fw_season_list{
+                .fw_season_wrapper{
+                    .swiper-slide{  /* 슬라이드 공통 CSS */
+                        >a{
+                            >img{
+                                width: 400px;
+                                height: 526px;
+                            }
                         }
                     }
-                }
-                a:nth-child(2){
-                    >.alwayes_red_woman{
-                    background: url(../images/AlwaysRed/woman.jpeg);
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                    width: 600px;
-                    height: 646px;
-                    color: $color-white;
-                    position: relative;
-                    transform-origin: bottom center;
-                    transition: scale 0.15s;
-                        &:hover{
-                            scale: 1.15;
-                        }
-                        >p{
-                            position: absolute;
-                            left: 50%;
-                            bottom: 100px;
-                            transform: translateX(-50%);
-                            font-size: $fontsize-22px;
-                            font-weight: $weight-semibold;
-                        }
-                    }
+                    .look1{} /* 슬라이드1번 고유 css ex)colorchip set */
                 }
             }
         }
