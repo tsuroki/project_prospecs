@@ -42,3 +42,20 @@ $fontsize-12px : 0.75rem;
 $weight-bold : 700;
 $weight-semibold : 600;
 $weight-medium : 500;
+$weight-light : 300;
+
+@mixin colorchip-shape{
+    width: 18px;
+    height:18px;
+    border-radius: 9px;
+}
+
+@mixin flex-row-nowrap{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+@mixin flex-col-nowrap{
+    display: flex;
+    flex-flow: column nowrap;
+}

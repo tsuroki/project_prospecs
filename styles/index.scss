@@ -1,13 +1,12 @@
 @use './common.scss' as *;
-
 #wrap{
     #main_wrap {
         /* ===배너=== */
         >.swiper{
             overflow: hidden;
+            position: relative;
             .swiper-wrapper{
-                display: flex;
-                flex-flow: row nowrap;
+                @include flex-row-nowrap;
                 justify-content: flex-start;
                 align-items:center;
                 .swiper-slide{
@@ -22,8 +21,7 @@
                     }
                     img {}
                     .bnr_text{
-                        display: flex;
-                        flex-flow: column nowrap;
+                        @include flex-col-nowrap;
                         justify-content: center;
                         align-items: flex-start;
                         position: absolute;
@@ -129,12 +127,37 @@
                     }
                 }
             }
+            .bnr-nav{
+                position: absolute;
+                bottom: 30px;
+                @include flex-row-nowrap;
+                justify-content: center;
+                align-items: center;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 300px;
+                .swiper-pagination-bullet{
+                    background-color: $color-white;
+                    height: 1.5px;
+                    border-radius: 0;
+                    margin: 0;
+                    opacity: 0.4;
+                    scale: 1;
+                    width: 100%;
+                    transition: opacity 0.3s;
+                }
+                .swiper-pagination-bullet-active{
+                    background-color: $color-white;
+                    opacity: 1;
+                    width: 100%;
+                    transition: opacity 0.3s;
+                }
+            }
         }
         /* ===BEST=== */
         .best_product {
             margin : 80px 80px;
-            display: flex;
-            flex-flow: column nowrap;
+            @include flex-col-nowrap;
             justify-content: center;
             align-items: flex-start;
             gap : 50px;
@@ -144,14 +167,12 @@
                 font-weight: $weight-bold;
             }
             .best_contents{
-                display: flex;
-                flex-flow: row nowrap;
+                @include flex-row-nowrap;
                 justify-content: center;
                 align-items: flex-start;
                 gap: 120px;
                 .category{
-                    display: flex;
-                    flex-flow: column nowrap;
+                    @include flex-col-nowrap;
                     justify-content: center;
                     align-items: flex-end;
                     gap:30px;
@@ -169,38 +190,32 @@
                 }
                 
                     .best_list{
-                        display: flex;
-                        flex-flow: column nowrap;
+                        @include flex-col-nowrap;
                         justify-content: center;
                         align-items: flex-start;
                         overflow:hidden;
                         width:calc((100vw) - 304px);
                         transform-origin: left ;
                         .swiper-wrapper{
-                            gap:50px;
-                            width: max-content;
                             .swiper-slide{
-                                width:380px;
                                 a{
-                                    display: flex;
-                                    flex-flow: column nowrap;
+                                    @include flex-col-nowrap;
                                     justify-content: center;
                                     align-items: flex-start;
                                     gap: 20px;
                                     img{
-                                        width:100%;
+                                        width:380px;
+                                        height: 380px;
                                     }
                                     .product_name{
                                         font-size: $fontsize-18px;
                                         font-weight:$weight-medium;
                                     }
                                     .colorchip_set{
-                                        display: flex;
-                                        flex-flow: row nowrap;
+                                        @include flex-row-nowrap;
                                         gap: 10px;
                                         .colorchip{
-                                            width:18px; height: 18px;
-                                            border-radius: 9px;
+                                            @include colorchip-shape;
                                             display:inline-block;
                                         }
                                     }
@@ -208,6 +223,8 @@
                                         font-weight:$weight-medium;
                                     }
                                 }
+                            }
+                            .swiper-slide-active{
                             }
                             >.slide1{
                                 >a{
@@ -331,6 +348,7 @@
                 font-size: $fontsize-18px;
                 font-weight: $weight-medium;
                 color: $color-white;
+                line-height: 1;
                 }
             }
             .always_red_image{
@@ -340,6 +358,16 @@
                 right:80px;
                 bottom: 0;
                 a:nth-child(1){
+                    >p{
+                            position: absolute;
+                            left: 0;
+                            bottom: 100px;
+                            font-size: $fontsize-22px;
+                            font-weight: $weight-semibold;
+                            left : 25%;
+                            transform: translateX(-50%);
+                            color:$color-white;
+                        }
                     >.always_red_man{
                     background: url(../images/AlwaysRed/man.jpeg);
                     background-repeat: no-repeat;
@@ -347,24 +375,25 @@
                     background-size: cover;
                     width: 600px;
                     height: 646px;
-                    color: $color-white;
                     position: relative;
                     transform-origin: bottom center;
                     transition: scale 0.15s;
                     &:hover{
                             scale: 1.15;
                         }
-                        >p{
-                            position: absolute;
-                            left: 50%;
-                            bottom: 100px;
-                            transform: translateX(-50%);
-                            font-size: $fontsize-22px;
-                            font-weight: $weight-semibold;
-                        }
                     }
                 }
                 a:nth-child(2){
+                    >p{
+                            position: absolute;
+                            left: 0;
+                            bottom: 100px;
+                            font-size: $fontsize-22px;
+                            font-weight: $weight-semibold;
+                            color: $color-white;
+                            left : 75%;
+                            transform: translateX(-50%);
+                        }
                     >.always_red_woman{
                     background: url(../images/AlwaysRed/woman.jpeg);
                     background-repeat: no-repeat;
@@ -372,20 +401,11 @@
                     background-size: cover;
                     width: 600px;
                     height: 646px;
-                    color: $color-white;
                     position: relative;
                     transform-origin: bottom center;
                     transition: scale 0.15s;
                         &:hover{
                             scale: 1.15;
-                        }
-                        >p{
-                            position: absolute;
-                            left: 50%;
-                            bottom: 100px;
-                            transform: translateX(-50%);
-                            font-size: $fontsize-22px;
-                            font-weight: $weight-semibold;
                         }
                     }
                 }
@@ -394,9 +414,8 @@
         /* alwaysred 끝 */
         /* new product */
         .new_product {
-            margin : 80px 80px;
-            display: flex;
-            flex-flow: column nowrap;
+            margin : 80px 80px 160px;
+            @include flex-col-nowrap;
             justify-content: center;
             align-items: flex-start;
             gap : 50px;
@@ -406,14 +425,12 @@
                 font-weight: $weight-bold;
             }
             .new_contents{
-                display: flex;
-                flex-flow: row nowrap;
+                @include flex-row-nowrap;
                 justify-content: center;
                 align-items: flex-start;
                 gap: 120px;
                 .category{
-                    display: flex;
-                    flex-flow: column nowrap;
+                    @include flex-col-nowrap;
                     justify-content: center;
                     align-items: flex-end;
                     gap:30px;
@@ -431,20 +448,17 @@
                 }
                 .new_products_line{
                     .new_list{
-                        display: flex;
-                        flex-flow: column nowrap;
+                        @include flex-col-nowrap;
                         justify-content: center;
                         align-items: flex-start;
                         overflow:hidden;
                         width:1619px;
                         .swiper-wrapper{
-                            gap:50px;
                             width: max-content;
                             .swiper-slide{
                                 width:380px;
                                 a{
-                                    display: flex;
-                                    flex-flow: column nowrap;
+                                    @include flex-col-nowrap;
                                     justify-content: center;
                                     align-items: flex-start;
                                     gap: 20px;
@@ -564,18 +578,121 @@
         /* newproduct끝 */
         /* FW SEASON LOOK */
         #fw_season{
-            .fw_season_title{}
-            .fw_season_list{
+            padding: 0 80px;
+            width: 100%;
+            margin-bottom:160px;
+            .fw_season_title{
+                font-size: $fontsize-36px;
+                font-weight: $weight-bold;
+                text-align: center;
+                margin-bottom: 100px;
+            }
+            .fw_season_list{/* swiper선언자리 */
+                width: 100%;
                 .fw_season_wrapper{
-                    .swiper-slide{  /* 슬라이드 공통 CSS */
-                        >a{
-                            >img{
+                    >.swiper-slide{
+                        width: 100%;
+                        @include flex-row-nowrap;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        .fw-product{
+                            a{
+                                >img{
                                 width: 400px;
                                 height: 526px;
+                                margin-bottom: 30px;
+                                }
+                                .fw_product_desc{
+                                    @include flex-row-nowrap;
+                                    gap: 10px;
+                                    >img{
+                                        width: 100px;
+                                        height: 100px;
+                                    }
+                                    .fw_product_info{
+                                        .fw_product_name{
+                                            font-weight: $weight-semibold;
+                                            font-size: $fontsize-18px;
+                                        }
+                                        .fw-discount_info{
+                                            .dis_per{
+                                                color: $color-red;
+                                                font-weight: $weight-medium;
+                                            }
+                                            .dis_price{
+                                                font-weight: $weight-medium;
+                                            }
+                                            /* dis-per and price css 적용 후 navigation 기능 구현 */
+                                        }
+                                        span{
+                                            del{
+                                                color: $color-8egray;
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
-                    .look1{} /* 슬라이드1번 고유 css ex)colorchip set */
+                }
+            }
+        }
+        /* FW SEASON LOOK 끝 */
+        /* what's on 시작*/
+        #whats-on{
+            margin: 0 0 160px 0;
+            overflow: hidden;
+            height: 815px;
+            .wo-title{
+                font-weight: $weight-bold;
+                font-size : $fontsize-36px;
+                text-align: center;
+                margin-bottom: 100px;
+                /* what's on title css 적용완료, contents 작성 실시 */
+            }
+            .wo-slide{
+                width: 400px;
+                overflow: visible;
+                .wo-wrapper{
+                    @include flex-row-nowrap;
+                    >.swiper-slide{
+                        transition: scale 0.3s;
+                        width: 400px;
+                        opacity: 0.3;
+                        transform: translateX(24px);
+                        >a{
+                            >img{
+                                width: 400px;
+                                height:500px;
+                                margin-bottom: 20px;
+                                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+                            }
+                            .title-text{
+                                @include flex-col-nowrap;
+                                justify-content: start;
+                                align-items: center;
+                                gap: 10px;
+                                .smalltext{
+                                    font-size: $fontsize-14px;
+                                    font-weight: $weight-medium;
+                                }
+                                h3{
+                                    font-size: $fontsize-26px;
+                                    font-weight: $weight-bold;
+                                }
+                            }
+                        }
+                    }
+                    .swiper-slide-active{
+                        width: 400px;
+                        z-index: 10; /* 가장 위에 보이도록 */
+                        opacity: 1; /* 투명도 100% */
+                        transition: scale 0.3s;
+                        transform-origin:center;
+                        scale: 1.2;
+                        margin: 0 -50px;
+                        transform: translateX(40px);
+                    }
                 }
             }
         }
