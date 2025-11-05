@@ -1,14 +1,18 @@
 /* header mouseover시 color => red 변환 */
-const gnbAction = document.querySelectorAll('.top #gnb li')
+/* header > gnb > lnb > li mouseover시 list 출력*/
+const gnbAction = document.querySelectorAll('.top #gnb > li')
+const lnbVisible = document.querySelectorAll('.gnb-list .lnb-list')
 
 for(let i of gnbAction){
     console.log(i)
     i.addEventListener('mouseover', () => {
         i.children[0].style.color = "#FA0A00"
         i.children[0].style.transition = "color 0.2s"
+        lnbVisible[0].style.display = "visible"
         i.addEventListener("mouseout", () => {
             i.children[0].style.color = "#222222"
             i.children[0].style.transition = "color 0.2s"
+            lnbVisible[0].style.display = "none"
         })
     })
 }

@@ -53,7 +53,6 @@
   position: relative;
   z-index: 1;
   line-height: 80px;
-  overflow: hidden;
 }
 #wrap header .top #gnb .gnb-list::after {
   content: "";
@@ -98,6 +97,24 @@
   height: 24px;
 }
 
+#wrap header .top #gnb .gnb-list {
+  position: relative;
+}
+#wrap header .top #gnb .gnb-list .lnb-list {
+  position: absolute;
+  background-color: #ffffff;
+  padding: 20px;
+  z-index: 1000;
+  bottom: -172px;
+  width: 100%;
+  display: none;
+}
+#wrap header .top #gnb .gnb-list .lnb-list > li {
+  margin-bottom: 30px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
 #wrap {
   padding: 116px 0 0 0;
 }
@@ -107,6 +124,7 @@
 #wrap #main_wrap > .swiper {
   overflow: hidden;
   position: relative;
+  z-index: 1;
 }
 #wrap #main_wrap > .swiper .swiper-wrapper {
   display: flex;
@@ -118,7 +136,7 @@
   width: 100vw;
   height: 680px;
   position: relative;
-  z-index: 1;
+  z-index: 50;
   display: flex;
   align-items: center;
 }

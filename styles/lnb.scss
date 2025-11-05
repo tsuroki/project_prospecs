@@ -1,0 +1,26 @@
+@use './common.scss' as *;
+
+#wrap{
+    header{
+        .top{
+            #gnb{
+                .gnb-list{position: relative;
+                    .lnb-list{
+                        position: absolute;
+                        background-color: $color-white;
+                        padding : 20px;
+                        z-index: 1000;
+                        bottom: -172px;
+                        width: 100%;
+                        display: none;
+                        >li{
+                            margin-bottom: 30px;
+                            font-size: $fontsize-14px;
+                            font-weight: $weight-medium;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
