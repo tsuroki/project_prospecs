@@ -17,6 +17,77 @@ for(let i of gnbAction){
     })
 }
 
+/* BEST 카테고리 클릭 시, SWIPER 전환 */
+
+const bestCate = document.querySelectorAll('.best_contents > .category');
+const bestCateItem = document.querySelectorAll(".best_contents > .category > a "); // 모든 카테고리 li 요소
+const bestSwiperList = document.querySelectorAll('.best_product > .best_contents > .swiper'); // 모든 Swiper 그룹 div 요소
+
+const bestCateArray = Array.from(bestCateItem);
+const bestSwiperArray = Array.from(bestSwiperList);
+
+console.log(bestCateArray)
+console.log(bestSwiperArray)
+
+bestSwiperList.forEach(swiper => {
+    swiper.style.display = "none";
+});
+
+// 첫 번째 카테고리(인덱스 0) 활성화 및 해당 스와이퍼 보이기
+if (bestCateItem.length > 0) {
+    bestCateItem[0].children[0].classList.add('active'); // 탭 활성화 스타일 적용
+}
+if (bestSwiperList.length > 0) {
+    bestSwiperList[0].style.display = "flex"; // 첫 번째 콘텐츠 보이기
+}
+
+// ----------------------------------------------------
+// 3. 모든 카테고리 아이템에 이벤트 리스너 추가
+// ----------------------------------------------------
+
+// NodeList인 bestCateItem에 forEach를 사용합니다.
+bestCateItem.forEach((clickedElement, clickedIndex) => {
+    
+    // clickedElement: 현재 순회 중인 <a> 요소 (각 카테고리 버튼)
+    // clickedIndex: 현재 순회 중인 <a> 요소의 인덱스 (0, 1, 2, ...)
+
+    clickedElement.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // 🎯 1. 조기 종료 (이미 활성화된 탭을 다시 클릭하면 아무것도 안 함)
+        if (clickedElement.children[0].classList.contains('active')) {
+            return; 
+        }
+
+        // ------------------------------------------------
+        // 🎯 2. 인덱스 기반 스타일 리셋 및 적용
+        // ------------------------------------------------
+
+        // A. 모든 카테고리 버튼의 'active' 클래스 제거 (스타일 리셋)
+        bestCateItem.forEach(item => {
+            item.children[0].classList.remove('active');
+        });
+        
+        // B. 클릭된 카테고리 버튼에 'active' 클래스 추가
+        clickedElement.children[0]. classList.add('active');
+
+        // ------------------------------------------------
+        // 🎯 3. 인덱스 기반 콘텐츠 토글 (핵심 로직)
+        // ------------------------------------------------
+
+        // A. 모든 스와이퍼 리스트 숨기기
+        bestSwiperList.forEach(swiper => {
+            swiper.style.display = "none";
+        });
+        
+        // B. 클릭된 인덱스에 **정확히 매칭되는** 스와이퍼 리스트만 보이기
+        // bestSwiperList[clickedIndex]를 사용하여 인덱스 매칭
+        if (bestSwiperList[clickedIndex]) {
+            bestSwiperList[clickedIndex].style.display = "flex";
+        }
+    });
+});
+
 /* clothes mouseover시 scale 변환 */
 /* 변수 선언 */
 const clothesAction1 = document.querySelector('.always_red_man')
